@@ -16,8 +16,12 @@ YUI.add('MasterMojit', function (Y, NAME) {
 
     for (i = 1; i <= 50; i++) {
         cfg.children['slot-' + i] = {
+            id: 'slot-' + i,
             type: 'DummyMojit',
-            action: 'index'
+            action: 'index',
+            config: {
+                foo: i
+            }
         };
     }
 
