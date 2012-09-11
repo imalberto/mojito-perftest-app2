@@ -3,7 +3,16 @@
 YUI.add('MasterMojit', function (Y, NAME) {
 
     var cfg = { children: {} },
+        microtime,
+        now,
         i;
+
+    try {
+        microtime = require('microtime');
+        now = microtime.now;
+    } catch (e) {
+        now = Date.now;
+    }
 
     for (i = 1; i <= 50; i++) {
         cfg.children['slot-' + i] = {
@@ -23,23 +32,28 @@ YUI.add('MasterMojit', function (Y, NAME) {
                 var f = c.index;
                 if (f) {
                     c.index = function (ac) {
-                        var start = Date.now();
+                        var start = now();
                         f.call(c, ac);
-                        duration += (Date.now() - start);
+                        duration += (now() - start);
                     };
                 }
             });
 
-            start = Date.now();
+            start = now();
 
             ac.composite.execute(cfg, function (data, meta) {
                 ac.done(data, meta);
 
-                var total = Date.now() - start;
-                console.log('================================================');
-                console.log('Overall time: ' + total + ' msec');
-                console.log('Time spent in our code: ' + duration + ' msec');
+                var total = now() - start;
 
+                console.log('============================================================================');
+                console.log('Overall time: ' + (total / 1000) + ' msec');
+                if (duration > 0) {
+                    console.log('Time spent in our code: ' + (duration / 1000) + ' msec [' + Math.round((100 * duration) / total) + '%]');
+                } else {
+                    console.log('Execute the app a second time to see how much time was spent in the app code');
+                }
+                console.log('============================================================================');
             });
         }
     };
