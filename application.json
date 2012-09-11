@@ -1,0 +1,20 @@
+[{
+    "settings": [ "master" ],
+
+    "appPort": 8666,
+
+    "shareYUIInstance": true,
+
+    "specs": {
+        "master": {
+            "type": "MasterMojit"
+        }
+    },
+
+    "log": {
+        "server": {
+            "level": "debug"
+        }
+    }
+}]
+

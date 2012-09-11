@@ -1,0 +1,19 @@
+{
+    "name": "mojito-perftest",
+    "description": "My Mojito application",
+    "version": "0.0.1",
+    "author": {
+        "name": "Julien Lecomte",
+        "email": "jlecomte@yahoo-inc.com"
+    },
+    "dependencies": {
+        "mojito": "0.4.x"
+    },
+    "engines": {
+        "node": ">= 0.4.2"
+    },
+    "scripts": {
+        "start": "mojito start"
+    }
+}
+
