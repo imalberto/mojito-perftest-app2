@@ -7,7 +7,7 @@
         "email": "jlecomte@yahoo-inc.com"
     },
     "dependencies": {
-        "mojito": "0.4.x"
+        "mojito": "git://github.com/yahoo/mojito.git#search-perf"
     },
     "engines": {
         "node": ">= 0.4.2"
