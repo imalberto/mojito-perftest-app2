@@ -51,9 +51,9 @@ YUI.add('MasterMojit', function (Y, NAME) {
                 var total = now() - start;
 
                 console.log('============================================================================');
-                console.log('Overall time: ' + (total / 1000) + ' msec');
+                console.log('Overall time: ' + (microtime ? total / 1000 : total) + ' msec');
                 if (duration > 0) {
-                    console.log('Time spent in our code: ' + (duration / 1000) + ' msec [' + Math.round((100 * duration) / total) + '%]');
+                    console.log('Time spent in our code: ' + (microtime ? duration / 1000 : duration) + ' msec [' + Math.round((100 * duration) / total) + '%]');
                 } else {
                     console.log('Execute the app a second time to see how much time was spent in the app code');
                 }
