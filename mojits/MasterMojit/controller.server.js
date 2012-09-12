@@ -50,14 +50,14 @@ YUI.add('MasterMojit', function (Y, NAME) {
 
                 var total = now() - start;
 
-                console.log('============================================================================');
-                console.log('Overall time: ' + (microtime ? total / 1000 : total) + ' msec');
+                Y.log('============================================================================', 'warn');
+                Y.log('Overall time: ' + (microtime ? total / 1000 : total) + ' msec', 'warn');
                 if (duration > 0) {
-                    console.log('Time spent in our code: ' + (microtime ? duration / 1000 : duration) + ' msec [' + Math.round((100 * duration) / total) + '%]');
+                    Y.log('Time spent in our code: ' + (microtime ? duration / 1000 : duration) + ' msec [' + Math.round((100 * duration) / total) + '%]');
                 } else {
-                    console.log('Execute the app a second time to see how much time was spent in the app code');
+                    Y.log('Execute the app a second time to see how much time was spent in the app code', 'warn');
                 }
-                console.log('============================================================================');
+                Y.log('============================================================================', 'warn');
             });
         }
     };
