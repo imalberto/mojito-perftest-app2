@@ -13,7 +13,7 @@
 
     "log": {
         "server": {
-            "level": "debug"
+            "level": "error"
         }
     }
 }]
