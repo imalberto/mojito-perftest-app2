@@ -1,20 +1,47 @@
-[{
-    "settings": [ "master" ],
-
-    "appPort": 8666,
-
-    "shareYUIInstance": true,
-
-    "specs": {
-        "master": {
-            "type": "MasterMojit"
+[
+    {
+        "settings": [ "master" ],
+        "appPort": 8666,
+        "shareYUIInstance": true,
+        "config": {
+          "name": "alberto"
+        },
+        "viewEngine": {
+            "mu": {
+                "bufferOutput": true
+            }
+        },
+        "specs": {
+            "master": {
+                "type": "MasterMojit"
+            }
+        },
+        "log": {
+            "server": {
+                "level": "error"
+            }
+        },
+        "XXperf": {
+            "mark": true,
+            "timeline": true
         }
     },
-
-    "log": {
-        "server": {
-            "level": "error"
+    {
+        "###": "Config for collecting stats",
+        "settings": [ "environment:test" ],
+        "log": {
+            "server": {
+                "level": "debug"
+            }
+        }
+    },
+    {
+        "###": "Config for dev - log everything",
+        "settings": [ "environment:dev" ],
+        "log": {
+            "server": {
+                "level": "debug"
+            }
         }
     }
-}]
-
+]

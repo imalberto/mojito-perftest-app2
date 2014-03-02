@@ -5,7 +5,8 @@ YUI.add('DummyMojit', function (Y, NAME) {
     Y.namespace('mojito.controllers')[NAME] = {
 
         index: function (ac) {
-            ac.done({status: NAME});
+            // ac.done({status: NAME});
+            ac.done('Mojito is working.');
         }
     };
 

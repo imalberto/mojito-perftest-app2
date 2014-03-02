@@ -1,7 +1,6 @@
 /*jslint anon:true, sloppy:true, nomen:true, plusplus: true*/
 
-YUI.add('MasterMojit', function (Y, NAME) {
-
+YUI.add('MasterMojit', function (Y, NAME) { 
     var cfg = { children: {} },
         microtime,
         now,
@@ -49,7 +48,9 @@ YUI.add('MasterMojit', function (Y, NAME) {
                 ac.done(data, meta);
 
                 var total = now() - start;
+                console.log('Overall time: ' + (total / 1000) + ' msec');
 
+                /*
                 console.log('============================================================================');
                 console.log('Overall time: ' + (total / 1000) + ' msec');
                 if (duration > 0) {
@@ -58,6 +59,7 @@ YUI.add('MasterMojit', function (Y, NAME) {
                     console.log('Execute the app a second time to see how much time was spent in the app code');
                 }
                 console.log('============================================================================');
+                */
             });
         }
     };
